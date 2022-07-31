@@ -45,3 +45,18 @@ npm i typescript-plugin-styled-components -D
 // a set of utilities for testing Styled Components with Jest.
 // This package improves the snapshot testing experience and provides a brand new matcher to make expectations on the style rules
 npm i jest-styled-components -D
+
+7. Husky - allows to run git hooks (scripts which can be set up to run at certain events in the GIT lifecycle)
+ https://www.freecodecamp.org/news/how-to-add-commit-hooks-to-git-with-husky-to-automate-code-tasks/
+ npm install husky -D
+
+ // Enable Git hooks
+ npx husky install
+
+ // To automatically have Git hooks enabled after install, edit package.json (pkg command available only with npm > 7.2)
+ npm pkg set scripts.prepare "husky install"
+
+ // create a hook
+ npx husky add .husky/pre-commit "npm lint"
+
+ 8. Line-staged - allows to run GIT hooks with husky but only for files which are staged.

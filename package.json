@@ -11,7 +11,9 @@
     "__comment__": "prebuild will run automatically with a build script. Scripts with 'pre' and 'post' will be executed with the same named script",
     "prebuild": "npm run clean-build",
     "prettier": "prettier --write .",
-    "lint": "eslint ./src --fix"
+    "lint": "eslint ./src --fix",
+    "__comment2__": "prepare will run automatically with a npm install.",
+    "prepare": "husky install"
   },
   "author": "Oleg Gurov",
   "license": "ISC",
@@ -19,6 +21,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo this is before commit"
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
@@ -37,6 +44,7 @@
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-sonarjs": "^0.14.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.1",
     "mini-css-extract-plugin": "^2.6.1",
     "prettier": "^2.7.1",
     "style-loader": "^3.3.1",

@@ -1,5 +1,6 @@
 export const init = () => {
   let element = document.createElement('h1');
+
   element.textContent = 'This is entry point';
   document.body.append(element);
 

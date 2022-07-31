@@ -15,7 +15,6 @@ const colors = {
 
 export const baseTheme = {
   ...colors,
-
   button: {
     bgColor: colors.primaryColor,
     color: '#fff',

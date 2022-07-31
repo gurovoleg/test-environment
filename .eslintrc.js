@@ -71,7 +71,7 @@ module.exports = {
     'max-params': ['error', 3],
     // requires or disallows a line break between in object literals
     'object-curly-newline': [
-      'error',
+      'warn',
       {
         ObjectExpression: { minProperties: 3 },
         ObjectPattern: { multiline: true },
