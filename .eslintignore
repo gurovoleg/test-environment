@@ -1,0 +1,9 @@
+node_modules
+build
+public
+
+# ignore js files from the root folder
+*.js
+
+# include all from the src folder
+!/src/**

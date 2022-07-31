@@ -1,0 +1,48 @@
+{
+  "name": "env-setup",
+  "version": "1.0.0",
+  "description": "setup environment",
+  "scripts": {
+    "start": "webpack-dev-server --mode development",
+    "test-with-env": "webpack-dev-server --mode development --env MY_NAME='Oleg Gurov' MY_PHONE='123 34'",
+    "build": "webpack --mode production",
+    "build:clean": "npm run clean-build && webpack",
+    "clean-build": "node ./scripts/clean-build.js",
+    "__comment__": "prebuild will run automatically with a build script. Scripts with 'pre' and 'post' will be executed with the same named script",
+    "prebuild": "npm run clean-build",
+    "prettier": "prettier --write .",
+    "lint": "eslint ./src --fix"
+  },
+  "author": "Oleg Gurov",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/eslint-parser": "^7.18.9",
+    "@babel/eslint-plugin": "^7.17.7",
+    "@babel/preset-env": "^7.18.6",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^8.2.5",
+    "babel-plugin-styled-components": "^2.0.7",
+    "css-loader": "^6.7.1",
+    "dotenv-webpack": "^8.0.0",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-sonarjs": "^0.14.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "prettier": "^2.7.1",
+    "style-loader": "^3.3.1",
+    "styled-tools": "^1.7.2",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
+  }
+}

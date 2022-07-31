@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "Aldrin";
+  src: url("FSAldrin-Regular.eot"),
+    url("FSAldrin-Regular.woff") format("woff"),
+    url("FSAldrin-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: "Aldrin";
+  src: url("FSAldrin-Medium.eot"),
+       url("FSAldrin-Medium.woff") format("woff"),
+       url("FSAldrin-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: "Aldrin";
+  src: url("FSAldrinWeb-Bold.eot"),
+       url("FSAldrin-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: "Aldrin";
+  src: url("FSAldrin-Light.woff") format("woff"),
+       url("FSAldrin-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: auto;
+}
