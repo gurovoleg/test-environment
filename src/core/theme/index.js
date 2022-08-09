@@ -15,6 +15,7 @@ const colors = {
 
 export const baseTheme = {
   ...colors,
+  breakpoints: defaultBreakpoints,
   button: {
     bgColor: colors.primaryColor,
     color: '#fff',

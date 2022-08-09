@@ -1,5 +1,3 @@
-const path = require('path');
-
 module.exports = {
   env: {
     browser: true,
@@ -96,6 +94,11 @@ module.exports = {
         blankLine: 'any',
         prev: ['import'],
         next: ['import'],
+      },
+      {
+        blankLine: 'always',
+        prev: '*',
+        next: ['return'],
       },
     ],
   },

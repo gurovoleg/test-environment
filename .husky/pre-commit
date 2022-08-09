@@ -1,4 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run lint
+# run lint and verify all files
+# npx run lint
+
+# run lint-staged and check only staged files
+npx lint-staged
