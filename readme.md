@@ -12,14 +12,32 @@ npm i webpack webpack-cli webpack-dev-server -D
 
 Plugins
 ```sh 
-# allows creating default index.html or use owm template, generates also file in output folder during build
+# allows creating default index.html or use own template, generates also file in output folder during build
 npm i html-webpack-plugin -D
 
 # allows to access environment variables from .env via process.env
 npm i dotenv-webpack -D
 ```
- 
-Set path aliases in config. Add jsconfig.json with { compilerOptions: { "baseUrl": "src" } }
+
+```sh
+# set path aliases
+resolve: {
+  alias: {
+    core: path.resolve(__dirname, 'src/core'),
+    components: path.resolve(__dirname, 'src/components'),
+    styles: path.resolve(__dirname, 'src/styles'),
+    utils: path.resolve(__dirname, 'src/utils'),
+  }
+}
+``` 
+```sh
+# add jsconfig.json to make IDE understand aliases and avoid warning "module is not installed"
+{ compilerOptions: { 
+    "baseUrl": "src" 
+  } 
+}
+
+```
 
 ### Babel
 ```sh 
@@ -55,6 +73,7 @@ npm i eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-react -
 
 Commands:
 ```sh
+# verify all files in 'src' folder and make changes if applicable 
 eslint ./src --fix
 ````
 
@@ -93,12 +112,30 @@ npx husky install
 # automatically have Git hooks enabled after install, edit package.json (pkg command available only with npm > 7.2)
 npm pkg set scripts.prepare "husky install"
 
-# create a hook
+# create a hook (run eslint for all files)
 npx husky add .husky/pre-commit "npm run lint"
 ```
  
 ### Line-staged - allows to run GIT hooks with husky but only for files which are staged.
+```sh
+npm i lint-staged -D
+```
+```sh
+# add lint-staged configuration to package.json (run eslint for all staged files)
+{
+  "lint-staged": {
+    "*.{js,jsx,ts}": "npm run lint"
+  }
+}
+```
+```sh
+# update husky pre-commit
 
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx lint-staged
+```
 ### Typescript
 
 ### Jest - unit & integration testing
