@@ -10,7 +10,7 @@ npm i react react-dom
 npm i webpack webpack-cli webpack-dev-server -D
 ```
 
-Plugins
+*Plugins*
 ```sh 
 # allows creating default index.html or use own template, generates also file in output folder during build
 npm i html-webpack-plugin -D
@@ -19,6 +19,7 @@ npm i html-webpack-plugin -D
 npm i dotenv-webpack -D
 ```
 
+*Some settings*
 ```sh
 # set path aliases
 resolve: {
@@ -44,7 +45,7 @@ resolve: {
 npm i babel-loader @babel-core -D
 ```
 
-Presets:
+*Presets*
 ```sh
 # transpile latest JS code to ES5
 npm i @babel/preset-env -D
@@ -61,7 +62,7 @@ npm i @babel/preset-typescript -D
 npm i prettier -D
 ```
 
-Commands:
+*Commands*
 ```sh
 prettier --write .
 prettier --check .
@@ -71,7 +72,7 @@ prettier --check .
 npm i eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-react -D
 ```
 
-Commands:
+*Commands*
 ```sh
 # verify all files in 'src' folder and make changes if applicable 
 eslint ./src --fix
@@ -102,8 +103,7 @@ npm i jest-styled-components -D
 ```
  
 ### Husky
-#### Allows run git hooks 
-(scripts which can be set up to run at certain events in the Git lifecycle)
+> Allows run git hooks (scripts which can be set up to run at certain events in the Git lifecycle)
 [how-to-add-commit-hooks-to-git-with-husky-to-automate-code-tasks](https://www.freecodecamp.org/news/how-to-add-commit-hooks-to-git-with-husky-to-automate-code-tasks/)
 ```sh
 npm install husky -D
@@ -119,7 +119,7 @@ npx husky add .husky/pre-commit "npm run lint"
 ```
  
 ### Line-staged
-#### Allows run GIT hooks with husky but only for files which are staged.
+> Allows run Git hooks with husky but only for files which are staged
 ```sh
 npm i lint-staged -D
 ```
