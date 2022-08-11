@@ -104,6 +104,7 @@ npm i jest-styled-components -D
  
 ### Husky
 > Allows run git hooks (scripts which can be set up to run at certain events in the Git lifecycle)
+
 [how-to-add-commit-hooks-to-git-with-husky-to-automate-code-tasks](https://www.freecodecamp.org/news/how-to-add-commit-hooks-to-git-with-husky-to-automate-code-tasks/)
 ```sh
 npm install husky -D
@@ -140,6 +141,46 @@ npm i lint-staged -D
 npx lint-staged
 ```
 ### Typescript
+We'll use Babel for transpiling to generate JS files instead of TSC.  
+It means we don't get type checking during transition from TS to JS.
+
+```sh
+npm i typescript @babel/preset-typescript -D
+```
+```sh
+# update package.json
+{
+  "presets": ["@babel/preset-typescript"]
+}
+```
+```js
+// update webpack.config.js to include .ts|.tsx files
+module: {
+  rules: [
+    {
+      test: /\.(js|ts|tsx)$/,
+      exclude: /node_modules/,
+      use: { loader: 'babel-loader' },
+    }
+    //...
+},
+resolve: {
+  // allows leaving extension when importing    
+  extensions: ['.tsx', '.ts', '.js']
+  //...
+}        
+```
+
+By using babel’s support for TypeScript, we get the ability to work with existing build pipelines and are more likely to have a faster JS emit time because Babel does not type check our code.
+
+TSC will be used manually for a type checking.
+
+When installing any libraries it is important to install the typing definition for that library.
+These definitions can be found at [TypeSearch](https://www.typescriptlang.org/dt/search?search=)
+```sh
+# add react, react-dom and styled components types 
+npm i @types/react @types/react-dom @types/styled-components  -D
+```
 
 ### Jest - unit & integration testing
 

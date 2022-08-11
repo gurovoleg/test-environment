@@ -38,7 +38,7 @@ module.exports = (env, argv) => {
     mode,
     devtool: devMode ? 'source-map' : undefined,
 
-    entry: './src/index.js',
+    entry: './src/index.tsx',
 
     output: {
       path: path.resolve(__dirname, 'build'),
@@ -66,7 +66,7 @@ module.exports = (env, argv) => {
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/,
+          test: /\.(js|jsx|ts|tsx)$/,
           exclude: /node_modules/,
           use: { loader: 'babel-loader' },
         },
@@ -82,6 +82,8 @@ module.exports = (env, argv) => {
     },
 
     resolve: {
+      // allows leaving extension when importing (js by default)
+      extensions: ['.tsx', '.ts', '.js'],
       alias: {
         core: path.resolve(__dirname, 'src/core'),
         components: path.resolve(__dirname, 'src/components'),

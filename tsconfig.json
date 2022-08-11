@@ -1,0 +1,39 @@
+{
+  //"extends": "./other-ts-config.json", // allows add settings from other config
+
+  // compile settings
+  "compilerOptions": {
+    "baseUrl": "src",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    // ECMAScript version in which to compile
+    "target": "es6",
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+//    "isolatedModules": false,
+//    "allowUnreachableCode": false,
+//    "allowUnusedLabels": false,
+//    "resolveJsonModule": true,
+//    "noImplicitReturns": true,
+//    "noImplicitUseStrict": false,
+//    "noStrictGenericChecks": false,
+//    "noUnusedLocals": false,
+//    "noUnusedParameters": false,
+//    "skipLibCheck": true,
+    "paths": {
+      "components/*": ["components/*"],
+      "utils/*": ["utils/*"],
+      "styles/*": ["styles/*"],
+      "core/*": ["core/*"],
+      "assets/*": ["assets/*"],
+    }
+  },
+  // by default TS will search files ["**/*"]
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts"
+  ]
+}

@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   presets: [
     // transpile latest JS code to ES5
@@ -11,8 +13,10 @@ module.exports = {
         runtime: 'automatic',
       },
     ],
+    // transpile TS to JS
+    '@babel/preset-typescript',
   ],
 
   // adds support for server-side rendering, minification of styles, and a nicer debugging experience(!!important!! adds component name to classes).
-  plugins: ['babel-plugin-styled-components'],
+  plugins: ['babel-plugin-styled-components']
 };
