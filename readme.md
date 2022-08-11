@@ -101,7 +101,9 @@ npm i typescript-plugin-styled-components -D
 npm i jest-styled-components -D
 ```
  
-### Husky - allows to run git hooks (scripts which can be set up to run at certain events in the GIT lifecycle)
+### Husky
+#### Allows run git hooks 
+(scripts which can be set up to run at certain events in the Git lifecycle)
 [how-to-add-commit-hooks-to-git-with-husky-to-automate-code-tasks](https://www.freecodecamp.org/news/how-to-add-commit-hooks-to-git-with-husky-to-automate-code-tasks/)
 ```sh
 npm install husky -D
@@ -116,7 +118,8 @@ npm pkg set scripts.prepare "husky install"
 npx husky add .husky/pre-commit "npm run lint"
 ```
  
-### Line-staged - allows to run GIT hooks with husky but only for files which are staged.
+### Line-staged
+#### Allows run GIT hooks with husky but only for files which are staged.
 ```sh
 npm i lint-staged -D
 ```
