@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { TimerButton, TimerWrapper } from './Timer.styled';
+import { TimerButton, TimerWrapper, TimerButtonWithSpinner } from './Timer.styled';
 import { TimerDisplay } from './TimerDisplay';
+import { Spinner } from '../Spinner';
 
 let timerId = null;
 
@@ -17,18 +18,18 @@ export const Timer = () => {
           setTimerActive(true);
         }}
       >
-        start
+        Start
       </TimerButton>
 
-      <TimerButton
+      <TimerButtonWithSpinner
         className="timer-button"
         onClick={() => {
           clearInterval(timerId);
           setTimerActive(false);
         }}
       >
-        stop
-      </TimerButton>
+        Stop <Spinner size="20" bgColor="white" color="black" inline />
+      </TimerButtonWithSpinner>
     </TimerWrapper>
   );
 };

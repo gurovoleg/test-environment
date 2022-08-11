@@ -1,7 +1,5 @@
 import { useEffect, useState, memo } from 'react';
-// import { getTime } from '../../utils/getTime';
 import * as S from './Timer.styled';
-
 import { getTime } from 'utils/getTime';
 
 let timerId = null;
