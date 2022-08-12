@@ -1,6 +1,7 @@
 import * as S from './Spinner.styled';
+import { SpinnerProps } from './types';
 
-export const Spinner = ({ size, bgColor, color, inline }) => {
+export const Spinner = ({ size, bgColor, color, inline }: SpinnerProps): JSX.Element => {
   const width = size && size >= 80 ? (size >= 100 ? 6 : 5) : size >= 30 ? 4 : 2;
 
   return (

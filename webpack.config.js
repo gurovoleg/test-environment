@@ -75,6 +75,7 @@ module.exports = (env, argv) => {
           use: [
             // style-loader inject CSS into the DOM (use in development); MiniCssExtractPlugin.loader is used in production to extract styles to css files.
             { loader: devMode ? 'style-loader' : MiniCssExtractPlugin.loader },
+            // interprets @import and url() like import/require() and will resolve them
             { loader: 'css-loader' },
           ],
         },

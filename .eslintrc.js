@@ -1,4 +1,6 @@
 module.exports = {
+  // ESLint will stop looking for config files in parent folders once it finds config with the 'root: true'
+  root: true,
   env: {
     browser: true,
     node: true,
@@ -11,7 +13,8 @@ module.exports = {
     No need when do not use experimental functions or FLow/Typescript
     P.S. @babel/eslint-plugin is also required
   */
-  parser: '@babel/eslint-parser',
+  // parser: '@babel/eslint-parser',
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     // version of ECMAScript syntax
     ecmaVersion: 6, // ECMAScript 5 by default
@@ -36,6 +39,7 @@ module.exports = {
     */
     '@babel/eslint-plugin', // can be shorthanded to @babel
     'import',
+    '@typescript-eslint'
   ],
 
   /*
@@ -59,6 +63,8 @@ module.exports = {
     'plugin:react/jsx-runtime',
     // custom community rules
     'plugin:sonarjs/recommended',
+    // recommended ts rules (also enables parser and plugin, so no need to specify them in plugin and parser sections additionally)
+    'plugin:@typescript-eslint/recommended'
   ],
   rules: {
     // disable props types validation

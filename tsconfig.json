@@ -6,21 +6,25 @@
     "baseUrl": "src",
     "module": "commonjs",
     "moduleResolution": "node",
-    // ECMAScript version in which to compile
-    "target": "es6",
-    "allowJs": true,
-    "jsx": "react-jsx",
+    "target": "es2020", // ECMAScript version in which to compile
+    "allowJs": true, // allows JS files to be imported inside the project
+    //"checkJs": true, // enables check of JS files
     "esModuleInterop": true,
-//    "isolatedModules": false,
-//    "allowUnreachableCode": false,
-//    "allowUnusedLabels": false,
-//    "resolveJsonModule": true,
-//    "noImplicitReturns": true,
-//    "noImplicitUseStrict": false,
-//    "noStrictGenericChecks": false,
-//    "noUnusedLocals": false,
-//    "noUnusedParameters": false,
-//    "skipLibCheck": true,
+    "strict": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true, // enables case sensitivity rules
+    "jsx": "react-jsx",
+    "resolveJsonModule": true, // allows JSON import
+    "allowUnusedLabels": false,
+    "noUnusedLocals": true, // unused local variables
+    "noUnusedParameters": true, // unused function parameters
+    "noImplicitReturns": true, // function should return value if specified
+    "noImplicitAny": true, // disallow 'any' type when no annotations are present (will track no type annotations)
+
+    //  "isolatedModules": false,
+    //  "noImplicitUseStrict": false,
+    //  "noStrictGenericChecks": false,
+
     "paths": {
       "components/*": ["components/*"],
       "utils/*": ["utils/*"],

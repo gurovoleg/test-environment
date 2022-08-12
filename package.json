@@ -5,21 +5,22 @@
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "ts": "tsc --noEmit",
+    "prettier": "prettier --write .",
+    "lint": "eslint ./src --fix",
     "test-with-env": "webpack-dev-server --mode development --env MY_NAME='Oleg Gurov' MY_PHONE='123 34'",
     "build": "webpack --mode production",
     "build:clean": "npm run clean-build && webpack",
     "clean-build": "node ./scripts/clean-build.js",
     "__comment__": "prebuild will run automatically with a build script. Scripts with 'pre' and 'post' will be executed with the same named script",
     "prebuild": "npm run clean-build",
-    "prettier": "prettier --write .",
-    "lint": "eslint ./src --fix",
     "__comment2__": "prepare will run automatically with a npm install.",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pre-commit": "npm run lint & npm run ts"
   },
   "author": "Oleg Gurov",
   "license": "ISC",
   "lint-staged": {
-    "*.{js,jsx,ts}": "npm run lint"
+    "*.{js,jsx,ts, tsx}": "npm run pre-commit"
   },
   "dependencies": {
     "husky": "^8.0.1",
@@ -38,6 +39,8 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
     "babel-loader": "^8.2.5",
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-styled-components": "^2.0.7",

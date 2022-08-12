@@ -1,5 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 import { ifProp, prop } from 'styled-tools';
+import { SpinnerProps, CircleProps } from './types';
 
 const circleAnimation = keyframes`
   0% {
@@ -10,7 +11,7 @@ const circleAnimation = keyframes`
   }
 `;
 
-export const SpinnerWrapper = styled.div`
+export const SpinnerWrapper = styled.div<SpinnerProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +34,7 @@ export const SpinnerWrapper = styled.div`
   height: ${prop('size', '50')}px;
 `;
 
-export const Circle = styled.span`
+export const Circle = styled.span<CircleProps>`
   position: absolute;
   width: 100%;
   height: 100%;

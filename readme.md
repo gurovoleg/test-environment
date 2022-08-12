@@ -141,8 +141,15 @@ npm i lint-staged -D
 npx lint-staged
 ```
 ### Typescript
+
+*Transpiling*
+
 We'll use Babel for transpiling to generate JS files instead of TSC.  
 It means we don't get type checking during transition from TS to JS.
+
+By using babel’s support for TypeScript, we get the ability to work with existing build pipelines and are more likely to have a faster JS emit time because Babel does not type check our code.
+
+TSC will be used manually for a type checking.
 
 ```sh
 npm i typescript @babel/preset-typescript -D
@@ -153,6 +160,8 @@ npm i typescript @babel/preset-typescript -D
   "presets": ["@babel/preset-typescript"]
 }
 ```
+*Webpack config*
+
 ```js
 // update webpack.config.js to include .ts|.tsx files
 module: {
@@ -171,9 +180,7 @@ resolve: {
 }        
 ```
 
-By using babel’s support for TypeScript, we get the ability to work with existing build pipelines and are more likely to have a faster JS emit time because Babel does not type check our code.
-
-TSC will be used manually for a type checking.
+*Pre-defined Types*
 
 When installing any libraries it is important to install the typing definition for that library.
 These definitions can be found at [TypeSearch](https://www.typescriptlang.org/dt/search?search=)
@@ -181,6 +188,33 @@ These definitions can be found at [TypeSearch](https://www.typescriptlang.org/dt
 # add react, react-dom and styled components types 
 npm i @types/react @types/react-dom @types/styled-components  -D
 ```
+
+*ESLint support tools*
+
+We have to install **typescript-eslint** which enables ESLint to run on TypeScript code.
+ESLint's default JavaScript parser cannot natively read in TypeScript-specific syntax and its rules don't natively have access to TypeScript's type information.
+
+typescript-eslint:
+ - allows ESLint to parse TypeScript syntax
+ - creates a set of tools for ESLint rules to be able to use TypeScript's type information
+ - provides a large list of lint rules that are specific to TypeScript and/or use that type information
+```sh
+npm i @typescript-eslint/parser @typescript-eslint/eslint-plugin  -D
+```
+
+Update eslintrc config:
+```js
+{
+  // configs 
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+  // parse TS to JS
+  parser: '@typescript-eslint/parser',
+  // typescript-eslint's rules
+  plugins: ['@typescript-eslint'],
+}
+```
+
+
 
 ### Jest - unit & integration testing
 
