@@ -15,10 +15,13 @@
     "prebuild": "npm run clean-build",
     "__comment2__": "prepare will run automatically with a npm install.",
     "prepare": "husky install",
-    "pre-commit": "npm run lint & npm run ts"
+    "pre-commit": "npm run lint && npm run ts"
   },
   "author": "Oleg Gurov",
   "license": "ISC",
+  "lint-staged": {
+    "*.{ts,tsx}": "npm run pre-commit"
+  },
   "dependencies": {
     "husky": "^8.0.1",
     "lottie-react": "^2.3.1",
