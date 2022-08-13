@@ -118,6 +118,14 @@ npm pkg set scripts.prepare "husky install"
 # create a hook (run eslint for all files)
 npx husky add .husky/pre-commit "npm run lint"
 ```
+
+Update husky pre-commit file
+```sh
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
+
+npm run lint && npm run ts
+```
  
 ### Line-staged
 > Allows run Git hooks with husky but only for files which are staged
@@ -128,7 +136,7 @@ npm i lint-staged -D
 # add lint-staged configuration to package.json (run eslint for all staged files)
 {
   "lint-staged": {
-    "*.{js,jsx,ts}": "npm run lint"
+    "*.{js,jsx,ts,tsx}": "npm run lint"
   }
 }
 ```
