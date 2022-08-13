@@ -2,7 +2,7 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # run lint and verify all files
-# npx run lint
+npm run lint && npm run ts
 
 # run lint-staged and check only staged files
-npx lint-staged
+# npx lint-staged

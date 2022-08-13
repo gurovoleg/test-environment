@@ -19,9 +19,6 @@
   },
   "author": "Oleg Gurov",
   "license": "ISC",
-  "lint-staged": {
-    "*.{js,jsx,ts, tsx}": "npm run pre-commit"
-  },
   "dependencies": {
     "husky": "^8.0.1",
     "lottie-react": "^2.3.1",

@@ -3,8 +3,6 @@ import { TimerButton, TimerWrapper, TimerButtonWithSpinner } from './Timer.style
 import { TimerDisplay } from './TimerDisplay';
 import { Spinner } from '../Spinner';
 
-let timerId = null;
-
 export const Timer = () => {
   const [timerActive, setTimerActive] = useState(true);
 
@@ -24,7 +22,6 @@ export const Timer = () => {
       <TimerButtonWithSpinner
         className="timer-button"
         onClick={() => {
-          clearInterval(timerId);
           setTimerActive(false);
         }}
       >

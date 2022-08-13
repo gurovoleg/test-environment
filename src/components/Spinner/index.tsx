@@ -1,2 +1,2 @@
-export * from './Spinner';
 export * from './LottieSpinner';
+export * from './Spinner';

@@ -1,8 +1,8 @@
-export const formatTime = (value) => {
-  return String(value).length === 2 ? value : `0${value}`;
+export const formatTime = (value: number): string => {
+  return String(value).length === 2 ? String(value) : `0${value}`;
 };
 
-export const getTime = () => {
+export const getTime = (): string => {
   const date = new Date();
   const hh = formatTime(date.getHours());
   const mm = formatTime(date.getMinutes());
