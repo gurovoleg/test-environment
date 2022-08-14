@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { TimerButton, TimerWrapper, TimerButtonWithSpinner } from './Timer.styled';
+import { TimerWrapper, TimerButtonsWrapper } from './Timer.styled';
 import { TimerDisplay } from './TimerDisplay';
-import { Spinner } from '../Spinner';
+import { TimerButton } from './TimerButton';
 
 export const Timer = () => {
   const [timerActive, setTimerActive] = useState(true);
@@ -9,24 +9,22 @@ export const Timer = () => {
   return (
     <TimerWrapper>
       <TimerDisplay active={timerActive} />
-
-      <TimerButton
-        className="timer-button"
-        onClick={() => {
-          setTimerActive(true);
-        }}
-      >
-        Start
-      </TimerButton>
-
-      <TimerButtonWithSpinner
-        className="timer-button"
-        onClick={() => {
-          setTimerActive(false);
-        }}
-      >
-        Stop <Spinner size="20" bgColor="white" color="black" inline />
-      </TimerButtonWithSpinner>
+      <TimerButtonsWrapper>
+        <TimerButton
+          label="Start"
+          disabled={timerActive}
+          onClick={() => {
+            setTimerActive(true);
+          }}
+        />
+        <TimerButton
+          label="Stop"
+          disabled={!timerActive}
+          onClick={() => {
+            setTimerActive(false);
+          }}
+        />
+      </TimerButtonsWrapper>
     </TimerWrapper>
   );
 };

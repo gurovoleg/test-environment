@@ -21,5 +21,24 @@ export const baseTheme = {
     color: '#fff',
     padding: '10px 20px',
     borderRadius: '8px',
+    size: {
+      sm: {
+        padding: '5px 10px',
+        fontSize: '12px',
+        lineHeight: '16px',
+      },
+      md: {
+        padding: '7px 12px',
+        fontSize: '12px',
+        lineHeight: '16px',
+      },
+      lg: {
+        padding: '10px 20px',
+        fontSize: '14px',
+        lineHeight: '16px',
+      },
+    },
   },
 };
+
+export type ThemeType = typeof baseTheme;

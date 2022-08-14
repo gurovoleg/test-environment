@@ -3,6 +3,7 @@ export type SpinnerProps = {
   bgColor?: string;
   color?: string;
   inline?: boolean;
+  isActive?: boolean;
 };
 
 export type CircleProps = {
