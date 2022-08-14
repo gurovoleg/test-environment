@@ -6,6 +6,6 @@ export const LottieAnimationWrapper = styled.div`
   width: 100%;
 
   div {
-    width: 60%;
+    width: 50%;
   }
 `;

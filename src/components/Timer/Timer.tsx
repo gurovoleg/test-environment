@@ -1,27 +1,27 @@
-import { useState } from 'react';
 import { TimerWrapper, TimerButtonsWrapper } from './Timer.styled';
 import { TimerDisplay } from './TimerDisplay';
 import { TimerButton } from './TimerButton';
+import { useTimer } from './state';
 
 export const Timer = () => {
-  const [timerActive, setTimerActive] = useState(true);
+  const { isActive, setActive } = useTimer();
 
   return (
     <TimerWrapper>
-      <TimerDisplay active={timerActive} />
+      <TimerDisplay active={isActive} />
       <TimerButtonsWrapper>
         <TimerButton
           label="Start"
-          disabled={timerActive}
+          disabled={isActive}
           onClick={() => {
-            setTimerActive(true);
+            setActive(true);
           }}
         />
         <TimerButton
           label="Stop"
-          disabled={!timerActive}
+          disabled={!isActive}
           onClick={() => {
-            setTimerActive(false);
+            setActive(false);
           }}
         />
       </TimerButtonsWrapper>
