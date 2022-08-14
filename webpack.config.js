@@ -41,7 +41,7 @@ module.exports = (env, argv) => {
     entry: './src/index.tsx',
 
     output: {
-      path: path.resolve(__dirname, 'build'),
+      path: path.resolve(__dirname, 'docs'),
       filename: `[name].[fullhash:8].js`,
       //clean: true, // clean output folder before re-build
 
