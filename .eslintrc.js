@@ -39,7 +39,7 @@ module.exports = {
     */
     '@babel/eslint-plugin', // can be shorthanded to @babel
     'import',
-    '@typescript-eslint'
+    '@typescript-eslint',
   ],
 
   /*
@@ -64,7 +64,7 @@ module.exports = {
     // custom community rules
     'plugin:sonarjs/recommended',
     // recommended ts rules (also enables parser and plugin, so no need to specify them in plugin and parser sections additionally)
-    'plugin:@typescript-eslint/recommended'
+    'plugin:@typescript-eslint/recommended',
   ],
   rules: {
     // disable props types validation
@@ -77,7 +77,7 @@ module.exports = {
     'object-curly-newline': [
       'warn',
       {
-        ObjectExpression: { minProperties: 3 },
+        // ObjectExpression: { minProperties: 3 },
         ObjectPattern: { multiline: true },
         ExportDeclaration: 'never',
         ImportDeclaration: { multiline: true },

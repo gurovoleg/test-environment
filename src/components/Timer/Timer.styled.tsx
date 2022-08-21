@@ -8,13 +8,12 @@ export const TimerWrapper = styled.div`
   ${CenteredStyles};
   flex-direction: column;
   padding: 50px 0;
-
-  .timer-button {
-    margin-right: 10px;
-  }
 `;
 
-export const TimerButtonsWrapper = styled.div``;
+export const TimerButtonsWrapper = styled.div`
+  ${CenteredStyles};
+  gap: 10px;
+`;
 
 export const TimerButton = styled.button<Pick<TimerButtonProps, 'size'>>`
   position: relative;

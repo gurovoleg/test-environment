@@ -8,4 +8,6 @@ export const LottieAnimationWrapper = styled.div`
   div {
     max-width: 800px;
   }
+
+  cursor: pointer;
 `;

@@ -3,12 +3,11 @@ import rabbitAnimation from '../../assets/lotties/hip-hop-waling-rabbit.json';
 import { Spinner } from '../Spinner';
 import * as S from './LottieAnimation.styled';
 import { useEffect, useRef, useState } from 'react';
-import { useTimer } from '../Timer/state';
 
 export const LottieAnimation = (): JSX.Element => {
-  const { isActive } = useTimer();
   const lottieRef: LottieRef = useRef();
   const [activeLottie, setActiveLottie] = useState(false);
+  const [isActive, setActive] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
@@ -27,7 +26,7 @@ export const LottieAnimation = (): JSX.Element => {
   }, [isActive]);
 
   return activeLottie ? (
-    <S.LottieAnimationWrapper>
+    <S.LottieAnimationWrapper onClick={() => setActive((active) => !active)}>
       <Lottie lottieRef={lottieRef} animationData={rabbitAnimation} loop />
     </S.LottieAnimationWrapper>
   ) : (

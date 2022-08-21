@@ -1,18 +1,30 @@
 import { useEffect, useState, memo } from 'react';
 import * as S from './Timer.styled';
 import { getTime } from 'utils/getTime';
+import { observer } from 'mobx-react';
 
-let timerId: ReturnType<typeof setInterval>;
+type TimerDisplayLabel = {
+  label: string;
+};
 
 // memoized component to be excluded from TimerDisplay re-render
-const TimerDisplayLabel = memo(() => <S.TimerLabel>Current time</S.TimerLabel>);
+const TimerDisplayLabel = memo(({ label = 'Current time' }: TimerDisplayLabel) => (
+  <S.TimerLabel>{label}</S.TimerLabel>
+));
 
 TimerDisplayLabel.displayName = 'TimerDisplayLabel';
 
-export const TimerDisplay = ({ active }: { active: boolean }): JSX.Element => {
+type TimerDisplayType = {
+  active: boolean;
+  label?: string;
+};
+
+export const TimerDisplay = observer(({ active, label }: TimerDisplayType): JSX.Element => {
   const [date, setDate] = useState(getTime());
 
   useEffect(() => {
+    let timerId: ReturnType<typeof setInterval>;
+
     if (active) {
       timerId = setInterval(() => {
         setDate(getTime());
@@ -26,8 +38,8 @@ export const TimerDisplay = ({ active }: { active: boolean }): JSX.Element => {
 
   return (
     <>
-      <TimerDisplayLabel />
+      <TimerDisplayLabel label={label} />
       <S.TimerDisplay>{date}</S.TimerDisplay>
     </>
   );
-};
+});

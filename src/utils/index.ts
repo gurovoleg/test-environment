@@ -1,3 +1,6 @@
+export * from './logger';
+export * from './getTime';
+
 export const init = () => {
   let element = document.createElement('h1');
 
