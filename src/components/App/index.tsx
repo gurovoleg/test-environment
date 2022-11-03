@@ -2,6 +2,12 @@ import { Timer } from '../Timer';
 import { AppProvider } from 'core';
 import { LottieAnimation } from '../LottieAnimation';
 import { CenteredRowContainer } from 'styles/global.styled';
+import { IntersectionObservedComponent } from '../IntersectionObservedComponent';
+import { LazyLoading } from '../LazyLoading';
+
+const Separator = ({ height = '100px' }) => (
+  <div style={{ height: height, background: 'orange' }}></div>
+);
 
 export const App = () => {
   return (
@@ -12,6 +18,16 @@ export const App = () => {
       </CenteredRowContainer>
 
       <LottieAnimation />
+      <Separator />
+
+      <IntersectionObservedComponent />
+      <Separator />
+
+      <IntersectionObservedComponent />
+      <Separator />
+
+      <LazyLoading />
+      <Separator />
     </AppProvider>
   );
 };

@@ -4,7 +4,7 @@ import { TimerButton } from './TimerButton';
 import { observer } from 'mobx-react';
 //import { useTimer } from './abstract-timer-mobx';
 import { useTimer } from './abstract-timer-effector';
-import { AbstractTimerStateType } from './abstract-timer';
+import { AbstractTimerStateType } from './abstract-timer-mobx';
 
 export const Timer = observer(
   ({ name, isActive: isActiveFromProps }: AbstractTimerStateType): JSX.Element => {
