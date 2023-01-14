@@ -1,22 +1,21 @@
 import { useLayoutEffect } from 'react';
 
-type callBackType = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => void;
-
 type useIntersectionObserverArgs = {
   selector?: string;
-  callback?: callBackType;
+  callback?: IntersectionObserverCallback;
   options?: IntersectionObserverInit;
 };
 
 const defaultOptions: IntersectionObserverInit = {
-  // parent or viewport
-  root: null,
+  root: null, // parent or viewport
   rootMargin: '0px',
-  // intersection with element
-  threshold: 0.5,
+  threshold: 0.5, // intersection with element
 };
 
-const changeElementColor: callBackType = (entries, observer) => {
+const changeElementColor: IntersectionObserverCallback = (
+  entries,
+  observer
+) => {
   entries.forEach((entry) => {
     console.log(entry);
     if (entry.isIntersecting) {

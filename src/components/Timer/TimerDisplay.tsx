@@ -1,6 +1,6 @@
 import { useEffect, useState, memo } from 'react';
 import * as S from './Timer.styled';
-import { getTime } from 'utils/getTime';
+import { convertToTimeString } from 'utils';
 import { observer } from 'mobx-react';
 
 type TimerDisplayLabel = {
@@ -8,7 +8,7 @@ type TimerDisplayLabel = {
 };
 
 // memoized component to be excluded from TimerDisplay re-render
-const TimerDisplayLabel = memo(({ label = 'Current time' }: TimerDisplayLabel) => (
+const TimerDisplayLabel = memo(({ label = 'Timer 1' }: TimerDisplayLabel) => (
   <S.TimerLabel>{label}</S.TimerLabel>
 ));
 
@@ -19,27 +19,35 @@ type TimerDisplayType = {
   label?: string;
 };
 
-export const TimerDisplay = observer(({ active, label }: TimerDisplayType): JSX.Element => {
-  const [date, setDate] = useState(getTime());
+export const TimerDisplay = observer(
+  ({ active, label }: TimerDisplayType): JSX.Element => {
+    const startValue = Date.now();
+    const [value, setValue] = useState(0);
+    const [addValue, setAddValue] = useState(0);
 
-  useEffect(() => {
-    let timerId: ReturnType<typeof setInterval>;
+    useEffect(() => {
+      let timerId: ReturnType<typeof setInterval>;
 
-    if (active) {
-      timerId = setInterval(() => {
-        setDate(getTime());
-      }, 1000);
-    }
+      if (active) {
+        timerId = setInterval(() => {
+          // we calculate difference between start time value and current time value as it 100% guarantees the correctness of timer
+          setValue(Date.now() - startValue + addValue);
+        }, 1000);
+      } else {
+        // we need to fix passed time to add it on the next start of timer
+        setAddValue(value);
+      }
 
-    return () => {
-      clearInterval(timerId);
-    };
-  }, [active]);
+      return () => {
+        clearInterval(timerId);
+      };
+    }, [active]);
 
-  return (
-    <>
-      <TimerDisplayLabel label={label} />
-      <S.TimerDisplay>{date}</S.TimerDisplay>
-    </>
-  );
-});
+    return (
+      <>
+        <TimerDisplayLabel label={label} />
+        <S.TimerDisplay>{convertToTimeString(value)}</S.TimerDisplay>
+      </>
+    );
+  }
+);

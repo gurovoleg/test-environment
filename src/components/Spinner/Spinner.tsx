@@ -12,7 +12,8 @@ export const Spinner = ({
     return null;
   }
 
-  const width = size && (size >= 80 ? (size >= 100 ? 6 : 5) : size >= 30 ? 4 : 2);
+  const width =
+    size && (size >= 80 ? (size >= 100 ? 6 : 5) : size >= 30 ? 4 : 2);
 
   return (
     <S.SpinnerWrapper size={size} inline={inline}>

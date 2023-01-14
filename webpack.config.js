@@ -49,7 +49,7 @@ module.exports = (env, argv) => {
        This is an important option when using on-demand-loading or loading external resources like images, files, etc. If an incorrect value is specified you'll receive 404 errors while loading these resources.
        This option specifies the public URL of the output directory when referenced in a browser.
       */
-      //publicPath: "/"
+      publicPath: '/', // !!! Also needed to correct Client Side Routing (https://stackoverflow.com/questions/42851373/react-router-not-returning-content-for-nested-routes-on-page-load)
     },
 
     devServer: {
@@ -57,6 +57,8 @@ module.exports = (env, argv) => {
       static: path.join(__dirname, 'public'),
       open: true,
       hot: false,
+      historyApiFallback: true,
+      port: 8888,
 
       client: {
         reconnect: 3, // tells dev-server the number of times it should try to reconnect the client. By default - unlimited.
@@ -91,6 +93,7 @@ module.exports = (env, argv) => {
         styles: path.resolve(__dirname, 'src/styles'),
         utils: path.resolve(__dirname, 'src/utils'),
         assets: path.resolve(__dirname, 'src/assets'),
+        pages: path.resolve(__dirname, 'src/pages'),
       },
     },
 

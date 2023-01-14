@@ -33,5 +33,5 @@ export const useTimer = (name?: string, isActive?: boolean) => {
     return new TimerState(name, isActive);
   }, []);
 
-  return { ...timer };
+  return { isActive: timer.isActive, setActive: timer.setActive };
 };

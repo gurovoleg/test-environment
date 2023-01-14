@@ -1,5 +1,5 @@
 export * from './logger';
-export * from './getTime';
+export * from './time';
 
 export const init = () => {
   let element = document.createElement('h1');

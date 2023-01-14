@@ -3,5 +3,9 @@ export type logDataType = {
 };
 
 export function logger(data: logDataType): void {
-  console.log('%c Logger ', 'background:blue;color:white;font-weight:bold', data);
+  console.log(
+    '%c Logger ',
+    'background:blue;color:white;font-weight:bold',
+    data
+  );
 }
