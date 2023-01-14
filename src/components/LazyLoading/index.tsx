@@ -11,6 +11,8 @@ const LazyMockData = lazy(() => {
   });
 });
 
+const LazyMockServerData = lazy(() => import('./ServerData'));
+
 export const LazyLoading = (): JSX.Element => {
   // const ref = useRef();
   const [loaded, setLoaded] = useState(false);
@@ -38,7 +40,7 @@ export const LazyLoading = (): JSX.Element => {
         if (entry.isIntersecting) {
           setLoaded(true);
           entry.target.style.height = 'unset';
-          observer.unobserve(entry.target);
+          // observer.unobserve(entry.target);
         } else {
           // setLoaded(false);
         }
@@ -51,8 +53,14 @@ export const LazyLoading = (): JSX.Element => {
   });
 
   return (
-    <div data-observed="lazy-container" style={{ border: '2px solid black' }}>
-      <Suspense fallback={<div>Suspense loading...</div>}>{loaded && <LazyMockData />}</Suspense>
+    <div
+      data-observed="lazy-container"
+      style={{ border: '2px solid black', position: 'relative' }}
+    >
+      <Suspense fallback={<div>Suspense loading...</div>}>
+        {/*{loaded && <LazyMockData />}*/}
+        {loaded && <LazyMockServerData />}
+      </Suspense>
       <div style={{ height: '200px' }}></div>
     </div>
   );

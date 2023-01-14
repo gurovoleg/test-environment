@@ -1,6 +1,6 @@
 module.exports = {
   singleQuote: true,
-  printWidth: 100,
+  printWidth: 80,
   tabWidth: 2,
   semi: true,
   quoteProps: 'consistent', // if at least one property in an object requires quotes, quote all properties

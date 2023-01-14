@@ -1,6 +1,6 @@
 import { useLayoutEffect } from 'react';
 
-type callBackType = (entries: [IntersectionObserverEntry], observer: IntersectionObserver) => void;
+type callBackType = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => void;
 
 type useIntersectionObserverArgs = {
   selector?: string;
