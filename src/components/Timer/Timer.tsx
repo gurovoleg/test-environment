@@ -22,6 +22,7 @@ export const Timer = observer(
             onClick={() => {
               setActive(true);
             }}
+            withSpinner
           />
           <TimerButton
             label="Stop"

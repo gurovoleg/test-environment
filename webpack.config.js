@@ -13,9 +13,10 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         title: 'Setup environment',
         // use own template instead of default
-        template: path.resolve(__dirname, './src/index.html'),
+        template: path.resolve(__dirname, './web/index.html'),
         // set filename in the output directory (build)
         filename: 'index.html', // index.html by default
+        favicon: './web/favicon.png',
       }),
 
       // allows to access environment variables from .env via process.env
@@ -54,7 +55,9 @@ module.exports = (env, argv) => {
 
     devServer: {
       // This option allows configuring options for serving static files from the directory ('contentBase' in previous versions, deprecated in v.5)
-      static: path.join(__dirname, 'public'),
+      static: {
+        directory: path.join(__dirname, 'web'),
+      },
       open: true,
       hot: false,
       historyApiFallback: true,
@@ -80,6 +83,10 @@ module.exports = (env, argv) => {
             // interprets @import and url() like import/require() and will resolve them
             { loader: 'css-loader' },
           ],
+        },
+        {
+          test: /\.png|jpg|ico/,
+          type: 'asset/resource',
         },
       ],
     },

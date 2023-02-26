@@ -6,6 +6,7 @@ export type TimerButtonProps = {
   label: string;
   disabled?: boolean;
   onClick(): void;
+  withSpinner?: boolean;
 };
 
 export const TimerButton = ({
@@ -13,6 +14,7 @@ export const TimerButton = ({
   onClick,
   disabled,
   size = 'md',
+  withSpinner = false,
 }: TimerButtonProps): JSX.Element => {
   return (
     <TimerButtonWithSpinner
@@ -21,7 +23,16 @@ export const TimerButton = ({
       disabled={disabled}
       onClick={onClick}
     >
-      {label} <Spinner size="16" bgColor="white" color="black" inline isActive={disabled} />
+      {label}&nbsp;
+      {withSpinner && (
+        <Spinner
+          size="16"
+          bgColor="white"
+          color="black"
+          inline
+          isActive={disabled}
+        />
+      )}
     </TimerButtonWithSpinner>
   );
 };
