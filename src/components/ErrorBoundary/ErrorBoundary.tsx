@@ -1,8 +1,14 @@
-import { Component, ErrorInfo, ReactNode } from 'react';
+import {
+  Component,
+  ErrorInfo,
+  ReactNode,
+  ComponentType,
+  isValidElement,
+} from 'react';
 import { logger } from 'utils';
 
 type ErrorBoundaryProps = {
-  fallback?: ReactNode;
+  fallback?: ComponentType<{ resetError: () => void }>;
   children?: ReactNode;
 };
 
@@ -34,12 +40,18 @@ export class ErrorBoundary extends Component<
     return <h1>ErrorBoundary default fallback render</h1>;
   }
 
+  resetError() {
+    this.setState({ hasError: false });
+  }
+
   render() {
-    logger({ name: 'ErrorBoundary render', hasError: this.state.hasError });
+    const { fallback: FallBack } = this.props;
+
+    console.log(isValidElement(FallBack));
 
     if (this.state.hasError) {
-      if (this.props.fallback) {
-        return this.props.fallback;
+      if (FallBack) {
+        return <FallBack resetError={this.resetError.bind(this)} />;
       }
 
       return this.renderDefaultFallback();

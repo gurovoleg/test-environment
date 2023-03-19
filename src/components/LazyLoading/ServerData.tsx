@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Spinner } from '../Spinner';
+import { Spinner } from 'components';
 
 const ServerData = (): JSX.Element => {
   const [data, setData] = useState([]);

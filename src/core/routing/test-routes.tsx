@@ -2,7 +2,7 @@ import { User, IntersectionObserver } from 'pages';
 import { RouteObject, Outlet } from 'react-router-dom';
 import { PlaceholderLoading } from 'components/PlaceholderLoading';
 import { TestComponentWithProps } from 'components/TestComponentWithProps';
-import { Spinner } from 'components/Spinner';
+import { Spinner } from 'components/ui/Spinner';
 import { PhoneNumber } from 'components/Mask/PhoneNumber';
 import { TestWithError } from 'components/ErrorBoundary';
 

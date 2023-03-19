@@ -4,9 +4,10 @@ import { Error } from '../../pages';
 
 export const PageLayout = ({ children }: PropsWithChildren): JSX.Element => {
   return (
-    <div>
+    <ErrorBoundary fallback={Error}>
       <NavBar />
-      <ErrorBoundary fallback={<Error />}>{children}</ErrorBoundary>
-    </div>
+
+      {children}
+    </ErrorBoundary>
   );
 };

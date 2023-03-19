@@ -1,6 +1,6 @@
 import Lottie, { LottieRef } from 'lottie-react';
 import rabbitAnimation from '../../assets/lotties/hip-hop-waling-rabbit.json';
-import { Spinner } from '../Spinner';
+import { Spinner } from 'components';
 import * as S from './LottieAnimation.styled';
 import { useEffect, useRef, useState } from 'react';
 

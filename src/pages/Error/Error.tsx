@@ -1,6 +1,11 @@
-import { useRouteError, isRouteErrorResponse } from 'react-router-dom';
+import {
+  useRouteError,
+  isRouteErrorResponse,
+  useNavigate,
+} from 'react-router-dom';
 import { CenteredColumnContainer } from '../../styles/global.styled';
 import { ErrorWrapper } from './Error.styled';
+import { Button } from 'components';
 
 type ErrorMessageProps = {
   status: number;
@@ -22,9 +27,11 @@ const ErrorMessage = ({
   );
 };
 
-export const Error = (): JSX.Element => {
+export const Error = ({ resetError }: { resetError(): void }): JSX.Element => {
   const error = useRouteError();
   const renderMessage = isRouteErrorResponse(error);
+
+  const navigate = useNavigate();
 
   return (
     <ErrorWrapper>
@@ -32,6 +39,19 @@ export const Error = (): JSX.Element => {
         <h1>Oops!</h1>
         <h2>Something went wrong.</h2>
         {renderMessage && <ErrorMessage {...error} />}
+        <br />
+
+        <Button
+          label="Go to Main page"
+          onClick={() => {
+            if (resetError) {
+              resetError();
+              navigate({
+                pathname: '/',
+              });
+            }
+          }}
+        />
       </CenteredColumnContainer>
     </ErrorWrapper>
   );

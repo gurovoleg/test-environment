@@ -1,5 +1,5 @@
 import { useLottie } from 'lottie-react';
-import sunAnimation from '../../assets/lotties/sun.json';
+import sunAnimation from '../../../assets/lotties/sun.json';
 import { useEffect } from 'react';
 import * as S from './Spinner.styled';
 import { SpinnerProps } from './types';
