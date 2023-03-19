@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BUILD_PATH="$(pwd)/build"
+BUILD_PATH="$(pwd)/docs"
 
 if [ -d "$BUILD_PATH" ]
 then
