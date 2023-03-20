@@ -35,33 +35,34 @@ export const testRoutes: RouteObject = {
       ),
     },
     {
-      path: 'users',
-      children: [
-        {
-          index: true,
-          element: <div>Users page</div>,
-          loader: async () => {
-            return new Promise((resolve) => {
-              setTimeout(() => {
-                resolve({ name: 'Oleg Gurov', age: 44 });
-              }, 2000);
-            });
-            // throw json({ message: 'email is required' }, { status: 400 });
-          },
-        },
-        {
-          path: ':userId',
-          element: <User />,
-        },
-      ],
-    },
-    {
       path: 'mask',
       element: <PhoneNumber />,
     },
     {
       path: 'error',
       element: <TestWithError />,
+    },
+    {
+      path: 'users',
+      children: [
+        {
+          index: true,
+          element: <div>Users page</div>,
+        },
+        {
+          path: ':userId',
+          id: '2',
+          element: <User />,
+          loader: async ({ params }) => {
+            return new Promise((resolve) => {
+              setTimeout(() => {
+                resolve({ name: 'Oleg Gurov', age: 44, id: params.userId });
+              }, 2000);
+            });
+            // throw json({ message: 'email is required' }, { status: 400 });
+          },
+        },
+      ],
     },
   ],
 };

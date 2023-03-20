@@ -8,6 +8,8 @@ import { Spinner } from 'components';
 const router = createBrowserRouter(routes);
 
 export const RouterProvider = (): JSX.Element => {
+  console.log('RouterProvider render');
+
   return (
     <ReactRouterProvider
       router={router}

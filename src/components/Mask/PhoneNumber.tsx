@@ -4,8 +4,6 @@ import { MaskInput } from './MaskInput';
 export const PhoneNumber = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
 
-  // console.log('PhoneNumber render', phoneNumber);
-
   const handlePhoneNumberChange = (value: string): void => {
     setPhoneNumber(value);
   };

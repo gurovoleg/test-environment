@@ -1,10 +1,4 @@
-import {
-  Component,
-  ErrorInfo,
-  ReactNode,
-  ComponentType,
-  isValidElement,
-} from 'react';
+import { Component, ErrorInfo, ReactNode, ComponentType } from 'react';
 import { logger } from 'utils';
 
 type ErrorBoundaryProps = {
@@ -26,8 +20,6 @@ export class ErrorBoundary extends Component<
   }
 
   static getDerivedStateFromError() {
-    logger({ name: 'ErrorBoundary getDerivedStateFromError' });
-
     // Update state so the next render will show the fallback UI.
     return { hasError: true };
   }
@@ -47,10 +39,8 @@ export class ErrorBoundary extends Component<
   render() {
     const { fallback: FallBack } = this.props;
 
-    console.log(isValidElement(FallBack));
-
     if (this.state.hasError) {
-      if (FallBack) {
+      if (typeof FallBack === 'function') {
         return <FallBack resetError={this.resetError.bind(this)} />;
       }
 

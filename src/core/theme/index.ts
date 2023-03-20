@@ -39,6 +39,18 @@ export const baseTheme = {
       },
     },
   },
+
+  aside: {
+    width: '250px',
+    bgColor: '#fff',
+    // color: '#fff',
+    padding: '15px',
+  },
+  header: {
+    height: '70px',
+    padding: '15px',
+    bgColor: '#fff',
+  },
 };
 
 export type ThemeType = typeof baseTheme;
