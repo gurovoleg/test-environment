@@ -12,7 +12,7 @@ export const LottieAnimation = (): JSX.Element => {
   useEffect(() => {
     setTimeout(() => {
       setActiveLottie(true);
-    }, 2000);
+    }, 1000);
   }, []);
 
   useEffect(() => {
@@ -24,6 +24,12 @@ export const LottieAnimation = (): JSX.Element => {
       }
     }
   }, [isActive]);
+
+  // return (
+  //   <video autoPlay width={50}>
+  //     <source src={require('../../assets/ers_logo.webm')} type="video/webm" />
+  //   </video>
+  // );
 
   return activeLottie ? (
     <S.LottieAnimationWrapper onClick={() => setActive((active) => !active)}>

@@ -11,6 +11,7 @@ const colors = {
   primaryColor: '#005A79',
   orangeColor: '#EE7A19',
   bgColor: '#FAFAFA',
+  gradientColor: 'linear-gradient(-70deg, #8250df 0%, #d42a32 100%)',
 };
 
 export const baseTheme = {
@@ -40,6 +41,13 @@ export const baseTheme = {
     },
   },
 
+  page: {
+    bgColor: '#fff',
+    fontSize: '16px',
+    lineHeight: '22px',
+    color: colors.primaryColor,
+    fontFamily: 'Aldrin, sans-serif',
+  },
   aside: {
     width: '250px',
     bgColor: '#fff',

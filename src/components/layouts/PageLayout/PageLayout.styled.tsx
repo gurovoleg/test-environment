@@ -63,4 +63,5 @@ export const MainWrapper = styled.div`
   padding: 20px;
   margin-left: ${theme('aside.width', '100px')};
   margin-top: ${theme('header.height', '100px')};
+  background-color: ${theme('page.bgColor')};
 `;

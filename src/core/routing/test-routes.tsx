@@ -5,6 +5,7 @@ import { TestComponentWithProps } from 'components/TestComponentWithProps';
 import { Spinner } from 'components/ui/Spinner';
 import { PhoneNumber } from 'components/Mask/PhoneNumber';
 import { TestWithError } from 'components/ErrorBoundary';
+import { TextSamples } from 'components/ui/Text/TextSamples';
 
 export const testRoutes: RouteObject = {
   path: 'test',
@@ -15,6 +16,10 @@ export const testRoutes: RouteObject = {
     </div>
   ),
   children: [
+    {
+      path: 'text',
+      element: <TextSamples />,
+    },
     {
       path: 'placeholder',
       element: <PlaceholderLoading />,
