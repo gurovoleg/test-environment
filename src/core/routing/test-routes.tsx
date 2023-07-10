@@ -6,6 +6,8 @@ import { Spinner } from 'components/ui/Spinner';
 import { PhoneNumber } from 'components/Mask/PhoneNumber';
 import { TestWithError } from 'components/ErrorBoundary';
 import { TextSamples } from 'components/ui/Text/TextSamples';
+import { IconSample } from 'components/ui/Icon/IconSample';
+import { AnimatedLoader } from 'components/ui/AnimatedLoader';
 
 export const testRoutes: RouteObject = {
   path: 'test',
@@ -17,8 +19,16 @@ export const testRoutes: RouteObject = {
   ),
   children: [
     {
+      path: 'loader',
+      element: <AnimatedLoader />,
+    },
+    {
       path: 'text',
       element: <TextSamples />,
+    },
+    {
+      path: 'icons',
+      element: <IconSample />,
     },
     {
       path: 'placeholder',

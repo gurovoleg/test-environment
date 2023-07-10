@@ -1,0 +1,13 @@
+<!--<svg width="40" height="60" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--    <path d="M7.75 1.41L6.32287 0L0.25 6L6.32288 12L7.75 10.59L3.11437 6L7.75 1.41Z" fill="#005A79"/>-->
+<!--</svg>-->
+
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<!--    <path d="M0 10 H 100 V 100 H 0 L 0 0"/>-->
+
+    <path d="M0 0 H10 0 V30" stroke="red" fill="none" stroke-width="10"/>
+
+    <!-- Точки -->
+<!--    <circle cx="0" cy="0" r="10" fill="red"/>-->
+
+</svg>

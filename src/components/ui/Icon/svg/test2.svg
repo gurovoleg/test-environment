@@ -1,0 +1,12 @@
+<!--<svg width="40" height="60" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--    <path d="M7.75 1.41L6.32287 0L0.25 6L6.32288 12L7.75 10.59L3.11437 6L7.75 1.41Z" fill="#005A79"/>-->
+<!--</svg>-->
+
+<svg width="10" height="10" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="20" height="20" fill="blue" />
+    <rect width="20" height="20" fill="red" x="20" />
+    <rect width="20" height="20" fill="green" x="40" />
+
+    <rect width="20" height="20" fill="orange" x="20" y="20" />
+    <rect width="20" height="20" fill="black" x="40" y="40" />
+</svg>
