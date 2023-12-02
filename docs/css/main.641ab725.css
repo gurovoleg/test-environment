@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+}
+
+@keyframes load {
+  from {
+    left: -100%;
+  }
+  to   {
+    left: 500%;
+  }
+}
+
+.placeholder-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid lightGrey;
+  padding: 50px;
+  text-align: center;
+  border-radius: 4px
+
+}
+
+.placeholder-item {
+  width: 100%;
+  background: lightGrey;
+  position: relative;
+  margin: 0 auto 30px;
+  overflow: hidden;
+  border-radius: 4px;
+
+}
+
+.placeholder-item__body {
+  flex-grow: 1;
+}
+
+
+.placeholder-item__title {
+  width: 80%;
+  height: 100px;
+}
+
+.placeholder-item__button {
+  width: 300px;
+  height: 60px;
+  margin-bottom: 0;
+}
+
+.placeholder-item::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  z-index: 1;
+
+  background: linear-gradient(to right, transparent 10%, #fff 50%, transparent 90%) 50% 50%;
+  animation: load 1s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+}
+@font-face {
+  font-family: "Aldrin";
+  src: url(/fonts/fa51665dfe0d3ccd6607.eot),
+    url(/fonts/cdc859e18f7068007a10.woff) format("woff"),
+    url(/fonts/19c7ca960bebed7d2c8f.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: "Aldrin";
+  src: url(/fonts/db030f014631d5f16b55.eot),
+       url(/fonts/ee78871d707f19d3d61d.woff) format("woff"),
+       url(/fonts/3626d169405f923e7092.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: "Aldrin";
+  src: url(/fonts/b264bce371dc4d3c6df4.eot),
+       url(/fonts/f99e8f789b027e2cd9ab.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: "Aldrin";
+  src: url(/fonts/a51552165ca119d79e02.woff) format("woff"),
+       url(/fonts/fe87f193d44895cc973a.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: auto;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-family: Aldrin, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul, ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Form */
+
+input, textarea, button, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button, input[type="submit"] {
+  display: inline-block;
+  box-shadow: none;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus, input:active,
+button:focus, button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
