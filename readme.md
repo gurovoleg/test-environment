@@ -42,7 +42,8 @@ resolve: {
 
 ### Babel
 ```sh 
-npm i babel-loader @babel-core -D
+npm i babel-loader @babel/core -D
+
 ```
 
 *Presets*
@@ -160,7 +161,7 @@ By using babel’s support for TypeScript, we get the ability to work with exist
 TSC will be used manually for a type checking.
 
 ```sh
-npm i typescript @babel/preset-typescript -D
+npm i typescript @babel/preset-typescript -D  
 ```
 ```sh
 # update package.json

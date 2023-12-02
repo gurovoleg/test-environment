@@ -43,14 +43,17 @@ module.exports = (env, argv) => {
 
     output: {
       path: path.resolve(__dirname, 'docs'),
-      filename: `[name].[fullhash:8].js`,
+      // filename: `[name].[fullhash:8].js`,
+      filename: `js/app.[fullhash:8].js`,
+      assetModuleFilename: 'images/[hash][ext][query]',
+
       //clean: true, // clean output folder before re-build
 
       /*
        This is an important option when using on-demand-loading or loading external resources like images, files, etc. If an incorrect value is specified you'll receive 404 errors while loading these resources.
        This option specifies the public URL of the output directory when referenced in a browser.
       */
-      publicPath: './', // !!! Also needed to correct Client Side Routing (https://stackoverflow.com/questions/42851373/react-router-not-returning-content-for-nested-routes-on-page-load)
+      publicPath: '/', // !!! Also needed to correct Client Side Routing (https://stackoverflow.com/questions/42851373/react-router-not-returning-content-for-nested-routes-on-page-load)
     },
 
     devServer: {
@@ -87,6 +90,23 @@ module.exports = (env, argv) => {
         {
           test: /\.png|jpg|ico|gif|mp4|webm/,
           type: 'asset/resource',
+          generator: {
+            filename: 'images/[hash][ext][query]',
+          },
+        },
+        {
+          test: /(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+          type: 'asset/resource',
+          generator: {
+            filename: 'fonts/[hash][ext][query]',
+          },
+        },
+        {
+          test: /\.json$/,
+          type: 'asset/resource',
+          generator: {
+            filename: 'assets/[hash][ext][query]',
+          },
         },
       ],
     },

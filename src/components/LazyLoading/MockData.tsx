@@ -1,4 +1,4 @@
-import { postcodes } from '../../test';
+import { postcodes } from '../../mock/postcodes';
 
 const data = postcodes.match(/.{3,4}\s.{3}/g);
 
