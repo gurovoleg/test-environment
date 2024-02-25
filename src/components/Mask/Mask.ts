@@ -1,6 +1,6 @@
-const isNumber = (v: string) => /[0-9]/i.test(v);
-const isChar = (v: string) => /[ёa-zа-я]/i.test(v);
-const isCharAndNumber = (v: string) => /[ёa-zа-я0-9]/i.test(v);
+// const isNumber = (v: string) => /[0-9]/i.test(v);
+// const isChar = (v: string) => /[ёa-zа-я]/i.test(v);
+// const isCharAndNumber = (v: string) => /[ёa-zа-я0-9]/i.test(v);
 
 export type MaskSettings = {
   mask: string;
@@ -8,13 +8,13 @@ export type MaskSettings = {
   maskChar?: string;
 };
 
-type MaskInputCharType = '0' | 'a' | '*';
-
-const MASK_INPUT_CHARS = {
-  '0': isNumber,
-  'a': isChar,
-  '*': isCharAndNumber,
-};
+// type MaskInputCharType = '0' | 'a' | '*';
+//
+// const MASK_INPUT_CHARS = {
+//   '0': isNumber,
+//   'a': isChar,
+//   '*': isCharAndNumber,
+// };
 
 export class Mask {
   mask: string;

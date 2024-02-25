@@ -1,15 +1,15 @@
 import { lazy, Suspense, useState } from 'react';
 import { useIntersectionObserver } from '../IntersectionObservedComponent/hooks';
 
-const LazyMockData = lazy(() => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      const result = import('./MockData');
-
-      resolve(result);
-    }, 2000);
-  });
-});
+// const LazyMockData = lazy(() => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       const result = import('./MockData');
+//
+//       resolve(result);
+//     }, 2000);
+//   });
+// });
 
 const LazyMockServerData = lazy(() => import('./ServerData'));
 
@@ -35,11 +35,12 @@ export const LazyLoading = (): JSX.Element => {
 
   useIntersectionObserver({
     selector: 'lazy-container',
-    callback: (entries, observer) => {
+    callback: (entries, _) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setLoaded(true);
-          entry.target.style.height = 'unset';
+          // entry.target.style.height = 'unset';
+          entry.target.removeAttribute('height');
           // observer.unobserve(entry.target);
         } else {
           // setLoaded(false);

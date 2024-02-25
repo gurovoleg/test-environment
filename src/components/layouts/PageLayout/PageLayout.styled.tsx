@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { theme } from 'styled-tools';
 
+const headerHeight = 'header.height';
+
 export const Wrapper = styled.div`
   color: ${theme('primaryColor')};
 `;
@@ -8,7 +10,7 @@ export const Wrapper = styled.div`
 export const HeaderWrapper = styled.div`
   display: flex;
   align-items: center;
-  padding: ${theme('header.padding', '15px')};
+  padding: ${theme(headerHeight, '15px')};
   border-bottom: 1px solid #c8c8c8;
   height: ${theme('header.height', '100px')};
   background-color: ${theme('header.bgColor')};
@@ -36,7 +38,7 @@ export const AsideWrapper = styled.div`
   border-right: 1px solid #c8c8c8;
 
   position: fixed;
-  top: ${theme('header.height', '100px')};
+  top: ${theme(headerHeight, '100px')};
   bottom: 0;
   left: 0;
   z-index: 100;
@@ -62,6 +64,6 @@ export const AsideItem = styled.div`
 export const MainWrapper = styled.div`
   padding: 20px;
   margin-left: ${theme('aside.width', '100px')};
-  margin-top: ${theme('header.height', '100px')};
+  margin-top: ${theme(headerHeight, '100px')};
   background-color: ${theme('page.bgColor')};
 `;

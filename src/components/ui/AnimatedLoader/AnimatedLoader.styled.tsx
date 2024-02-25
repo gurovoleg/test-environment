@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { prop } from 'styled-tools';
+import { AnimatedLoaderProps } from './AnimatedLoader';
 
 const transformAnimation = keyframes`
   0% {
@@ -30,7 +31,7 @@ const transformAnimation = keyframes`
   }
 `;
 
-export const AnimationWrapper = styled.div`
+export const AnimationWrapper = styled.div<AnimatedLoaderProps>`
   position: relative;
   display: flex;
   align-items: center;

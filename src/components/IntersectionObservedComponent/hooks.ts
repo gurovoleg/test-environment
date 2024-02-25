@@ -17,13 +17,15 @@ const changeElementColor: IntersectionObserverCallback = (
   observer
 ) => {
   entries.forEach((entry) => {
-    console.log(entry);
+    console.log(entry, observer);
     if (entry.isIntersecting) {
-      entry.target.style.backgroundColor = 'deepSkyBlue';
+      // entry.target.style.backgroundColor = 'deepSkyBlue';
+      entry.target.setAttribute('backgroundColor', 'deepSkyBlue');
       // stop observing
       // observer.unobserve(entry.target);
     } else {
-      entry.target.style.backgroundColor = 'unset';
+      // entry.target.style.backgroundColor = 'unset';
+      entry.target.removeAttribute('backgroundColor');
     }
   });
 };

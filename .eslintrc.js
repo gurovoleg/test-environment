@@ -107,6 +107,7 @@ module.exports = {
         next: ['return'],
       },
     ],
+    'sonarjs/cognitive-complexity': ['error', 20],
   },
   settings: {
     // React version. "detect" automatically picks the version you have installed. Need to set to avoid warning
